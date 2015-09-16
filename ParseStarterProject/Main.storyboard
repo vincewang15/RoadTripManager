@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="WrU-6D-InB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--About-->
+        <scene sceneID="D6S-2b-oja">
+            <objects>
+                <viewController id="NAt-wo-306" customClass="aboutTab" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oe9-ik-dYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="hIP-Id-awF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="l7z-qy-rRO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="Info-25(1).png" id="cJU-1d-lEH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEl-sS-w9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="1031"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eQx-Hv-AEz">
+            <objects>
+                <tabBarController id="WrU-6D-InB" customClass="RTMTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pdl-d1-Yci"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OLz-RV-xbh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="D4P-xx-1aa" kind="relationship" relationship="viewControllers" id="YdN-Yv-zRB"/>
+                        <segue destination="n39-GL-bH0" kind="relationship" relationship="viewControllers" id="XUy-4A-BoO"/>
+                        <segue destination="NAt-wo-306" kind="relationship" relationship="viewControllers" id="hTj-ZN-UjG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z10-YU-8dl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="264"/>
+        </scene>
+        <!--Plan a trip!-->
+        <scene sceneID="O39-Xr-qGt">
+            <objects>
+                <navigationController id="D4P-xx-1aa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Plan a trip!" image="Waypoint Map-25.png" id="fNT-68-U9V"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Egc-xu-YFx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="533-qy-g5k" kind="relationship" relationship="rootViewController" id="hmv-au-jrO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGO-p7-KbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="264"/>
+        </scene>
+        <!--Select your vehicle-->
+        <scene sceneID="LDT-oE-LCt">
+            <objects>
+                <tableViewController id="533-qy-g5k" customClass="RTMCarListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YKC-8m-hjI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="533-qy-g5k" id="Llb-Rs-3oX"/>
+                            <outlet property="delegate" destination="533-qy-g5k" id="1Yl-Pd-XkC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select your vehicle" prompt="Road Trip Manager" id="Ge2-Da-Xyr"/>
+                    <connections>
+                        <segue destination="wip-Wp-fQ8" kind="push" identifier="myView" id="UoZ-Ra-0CN"/>
+                        <segue destination="Ky6-aP-dkC" kind="push" identifier="map segue" id="Pg8-rr-VGS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBW-8g-Mfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="703" y="264"/>
+        </scene>
+        <!--What's your car?-->
+        <scene sceneID="Y9h-Cb-luB">
+            <objects>
+                <tableViewController id="wip-Wp-fQ8" customClass="AddCarViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qGL-Uw-IAm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xtR-0C-uBG">
+                            <rect key="frame" x="-23" y="-15" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Add your vehicle  &gt; &gt; ">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addVehicleOnClick:" destination="wip-Wp-fQ8" eventType="touchUpInside" id="ZLk-Hc-ZTS"/>
+                            </connections>
+                        </button>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="wip-Wp-fQ8" id="EE7-OI-giB"/>
+                            <outlet property="delegate" destination="wip-Wp-fQ8" id="hSy-7J-U2o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="What's your car?" prompt="Road Trip Manager" id="Ss0-3F-lIA"/>
+                    <connections>
+                        <outlet property="addVehicleButton" destination="xtR-0C-uBG" id="tnQ-8i-j35"/>
+                        <segue destination="J96-jn-xfG" kind="push" identifier="Year: Segue" id="hkx-yr-pSZ"/>
+                        <segue destination="09q-0S-7jS" kind="push" identifier="Vehicle Make: Segue" id="HY8-gW-afD"/>
+                        <segue destination="jni-g4-xSg" kind="push" identifier="Vehicle Model: Segue" id="VSm-tM-KhN"/>
+                        <segue destination="d6y-17-rSh" kind="push" identifier="Vehicle Option: Segue" id="nLf-3m-JI5"/>
+                        <segue destination="533-qy-g5k" kind="push" identifier="confirm-add segue" id="Wrt-30-0Z5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLr-hx-TqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="703" y="1055"/>
+        </scene>
+        <!--Year manufactured-->
+        <scene sceneID="gG5-Sj-e4y">
+            <objects>
+                <viewController id="J96-jn-xfG" customClass="YearPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C2M-FF-PBh"/>
+                        <viewControllerLayoutGuide type="bottom" id="IhE-QG-Wh4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="odH-Mp-cYW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jOe-Ya-xmY">
+                                <rect key="frame" x="0.0" y="79" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Year manufactured" prompt="Road Trip Manager" id="vTt-Wg-coh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oan-fp-McB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="2051"/>
+        </scene>
+        <!--Make of Vehicle-->
+        <scene sceneID="hZy-mA-0Pz">
+            <objects>
+                <viewController id="09q-0S-7jS" customClass="MakePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hlF-mN-xq2"/>
+                        <viewControllerLayoutGuide type="bottom" id="tcu-SZ-2Ke"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvj-oo-Khd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRg-d5-QXy">
+                                <rect key="frame" x="0.0" y="78" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Make of Vehicle" prompt="Road Trip Manager " id="ILV-Nj-Iv4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nka-EP-o9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="2051"/>
+        </scene>
+        <!--Vehicle model name -->
+        <scene sceneID="WXW-AN-Hbm">
+            <objects>
+                <viewController id="jni-g4-xSg" customClass="ModelPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bmi-Ea-d7U"/>
+                        <viewControllerLayoutGuide type="bottom" id="jMN-ue-x5P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Sb-5O-mwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-qw-Ud1">
+                                <rect key="frame" x="0.0" y="94" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vehicle model name " prompt="Road Trip Manager" id="awG-wx-50c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYP-Nn-nsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="2051"/>
+        </scene>
+        <!--Vehicle option-->
+        <scene sceneID="Zdw-jG-PDx">
+            <objects>
+                <viewController id="d6y-17-rSh" customClass="OptionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AW4-JP-LvG"/>
+                        <viewControllerLayoutGuide type="bottom" id="wYs-xt-Xnz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lS2-e5-eYB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xV-Zz-r7C">
+                                <rect key="frame" x="0.0" y="203" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vehicle option" prompt="Road Trip Manager" id="IAs-y5-Uop"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sr4-lc-I8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="2051"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="sQr-TG-Zbq">
+            <objects>
+                <navigationController id="n39-GL-bH0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-25(1).png" id="TsF-pt-Kve"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DPM-C0-lTK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Hq1-HQ-OlH" kind="relationship" relationship="rootViewController" id="4m8-EB-uXM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpC-uk-LzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="-412"/>
+        </scene>
+        <!--settings-->
+        <scene sceneID="M7K-pK-qkf">
+            <objects>
+                <tableViewController id="Hq1-HQ-OlH" userLabel="settings" customClass="SettingTabItemViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NrH-Yq-bfq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Hq1-HQ-OlH" id="OTA-kY-sBI"/>
+                            <outlet property="delegate" destination="Hq1-HQ-OlH" id="5h8-aE-LMQ"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-25.png" id="1F5-u1-rlb"/>
+                    <navigationItem key="navigationItem" title="Your Preferences" prompt="Road Trip Manager" id="fyw-KW-NKH"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="JC0-iG-IcE" kind="push" identifier="Gas: Segue" id="x25-Mb-NJT"/>
+                        <segue destination="f1p-gv-j6c" kind="push" identifier="Sleep: Segue" id="czC-gr-W8n"/>
+                        <segue destination="Wyl-n7-HDl" kind="push" identifier="Food: Segue" id="9cP-Dm-tum"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMF-LL-Eoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="-452"/>
+        </scene>
+        <!--I want to fill up at...-->
+        <scene sceneID="1fT-YR-IiS">
+            <objects>
+                <viewController id="JC0-iG-IcE" customClass="GasViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqL-qw-oNF"/>
+                        <viewControllerLayoutGuide type="bottom" id="5bJ-3P-OhD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X7z-0g-ZN6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irT-Yt-kYm">
+                                <rect key="frame" x="0.0" y="183" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="I want to fill up at..." prompt="Road Trip Manager" id="jVu-2A-NpF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQa-vI-Qnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248" y="-309"/>
+        </scene>
+        <!--I want to stay at...-->
+        <scene sceneID="EDX-Zs-hVi">
+            <objects>
+                <viewController id="f1p-gv-j6c" customClass="HotelOptionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gW3-w2-gtB"/>
+                        <viewControllerLayoutGuide type="bottom" id="LDl-cm-a0y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qVC-aW-ESa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYi-Fj-WOt">
+                                <rect key="frame" x="0.0" y="183" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="I want to stay at..." prompt="Road Trip Manager" id="VYa-dc-Bw6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVm-5t-oeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="-309"/>
+        </scene>
+        <!--I want to eat...-->
+        <scene sceneID="s6R-UO-IfV">
+            <objects>
+                <viewController id="Wyl-n7-HDl" customClass="FoodOptionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="utr-R9-4G0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ndc-Vf-NRD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j2I-sX-xes">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJg-Zj-Yg8">
+                                <rect key="frame" x="0.0" y="183" width="320" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="I want to eat..." prompt="Road Trip Manager" id="fMd-dk-0Ff"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMj-g8-Xnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="-309"/>
+        </scene>
+        <!--Let's get you going!-->
+        <scene sceneID="6fb-ce-Uzx">
+            <objects>
+                <viewController id="Ky6-aP-dkC" customClass="MapPart" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1D1-6o-6dF"/>
+                        <viewControllerLayoutGuide type="bottom" id="gMK-dz-7FN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dWy-h1-kio">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gWQ-q8-ZPD">
+                                <rect key="frame" x="0.0" y="94" width="320" height="364"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="start" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqu-QP-Jvz">
+                                <rect key="frame" x="33" y="102" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addressSearch:" destination="Ky6-aP-dkC" eventType="editingDidEndOnExit" id="lg6-gv-bKi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="destination" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptn-4J-lgW">
+                                <rect key="frame" x="33" y="145" width="243" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="startsearch:" destination="Ky6-aP-dkC" eventType="editingDidEndOnExit" id="1qN-Yn-5j6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHP-E7-hrh">
+                                <rect key="frame" x="0.0" y="471" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="See Route">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="routeButtonPressed:" destination="Ky6-aP-dkC" eventType="touchUpInside" id="Nze-Lt-cmR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKu-8N-DI1">
+                                <rect key="frame" x="101" y="488" width="118" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om6-Nz-h0d">
+                                <rect key="frame" x="221" y="471" width="99" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Start Trip &gt; &gt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInstructions:" destination="Ky6-aP-dkC" eventType="touchUpInside" id="LHO-yv-gi8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPU-ru-z1y">
+                                <rect key="frame" x="101" y="466" width="118" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Let's get you going!" prompt="Road Trip Manager" id="JBg-Xo-ql2"/>
+                    <connections>
+                        <outlet property="destinationText" destination="Ptn-4J-lgW" id="A9L-gA-Iv4"/>
+                        <outlet property="distanceLabel" destination="uKu-8N-DI1" id="zlm-Ft-ENe"/>
+                        <outlet property="mapView" destination="gWQ-q8-ZPD" id="GH3-Ue-spq"/>
+                        <outlet property="startText" destination="gqu-QP-Jvz" id="Xcm-ae-74Y"/>
+                        <outlet property="time" destination="zPU-ru-z1y" id="KYO-Lb-6vL"/>
+                        <segue destination="F5z-MB-G9U" kind="push" identifier="Route Pusher" id="5PK-f8-hDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvL-j6-oZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2379" y="326"/>
+        </scene>
+        <!--Your trip:-->
+        <scene sceneID="qQG-bE-J3t">
+            <objects>
+                <viewController id="F5z-MB-G9U" customClass="DirectionPage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ejo-mx-hAc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xzn-7j-SZs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vBw-Do-XdV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dr6-iN-Pd5">
+                                <rect key="frame" x="0.0" y="94" width="320" height="425"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your trip:" prompt="Road Trip Manager" id="oln-Z3-R2g"/>
+                    <connections>
+                        <outlet property="instructionText" destination="Dr6-iN-Pd5" id="F5Z-nV-T8v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rv-oQ-F6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2770" y="326"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Info-25(1).png" width="25" height="25"/>
+        <image name="Settings-25(1).png" width="25" height="25"/>
+        <image name="Settings-25.png" width="25" height="25"/>
+        <image name="Waypoint Map-25.png" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="hmv-au-jrO"/>
+    </inferredMetricsTieBreakers>
+</document>
